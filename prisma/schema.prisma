@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id            Int     @id @default(autoincrement())
+  email         String? @unique(map: "email") @db.VarChar(255)
+  username      String? @db.Text
+  avatar        String? @db.Text
+  discordId     String? @unique(map: "discordId") @db.VarChar(255)
+  group         Int?
+  isAdmin       Boolean @default(false)
+  refresh_token String? @db.Text
+}
+
+model logs {
+  id          String   @id @default(uuid())
+  title       String   @db.Text
+  message     String   @db.Text
+  category    String   @db.Text
+  identifiers String   @db.Text
+  createdAt   DateTime @default(now())
+}
+
+model categories {
+  id    String @id @default(uuid())
+  name  String @db.Text
+  group Int
+}
+
+model groups {
+  id      Int     @id @unique @default(autoincrement())
+  name    String  @db.Text
+  roleId  String  @db.Text
+  isAdmin Boolean @default(false)
+}
