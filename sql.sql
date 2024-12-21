@@ -98,11 +98,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `discordId` (`discordId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Exportiere Daten aus Tabelle masora_logs.users: ~1 rows (ungefähr)
-INSERT INTO `users` (`email`, `username`, `avatar`, `discordId`, `group`, `isAdmin`, `id`) VALUES
-	('scharpcollin446@gmail.com', 'basicfx', 'https://cdn.discordapp.com/avatars/1144679420028792972/c92e320d80162cd2d27081f229b82f2e.png', '1144679420028792972', 1, 1, 1),
-	('zzfxnn.mlltt@gmail.com', 'zzfxnn', 'https://cdn.discordapp.com/avatars/927939087950811197/8d880a4a1f07e80122303bcd908e3c8b.png', '927939087950811197', 1, 1, 2);
-
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
